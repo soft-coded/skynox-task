@@ -1,0 +1,262 @@
+/* Initial setup */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-white: #fefcfc;
+  --text-black: #1e1e1e;
+  --text-black-light: #4b4b4b;
+  --text-green: #00d19b;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  width: 100vw;
+  color: var(--text-black);
+  background-color: var(--bg-white);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.inner {
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: auto;
+  height: 100%;
+}
+/* Main */
+main {
+  height: 80%;
+  width: 100%;
+}
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  height: 100%;
+}
+/* Main left */
+.carousel {
+  width: 40vw;
+}
+.carousel .swiper-slide img {
+  width: 40vw;
+  object-fit: cover;
+  object-position: center;
+  height: 60vh;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #aaa;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1rem;
+  font-weight: 900;
+}
+.thumbnails {
+  width: 40vw;
+  margin-top: 2vh;
+  overflow: hidden;
+}
+.thumbnail img {
+  width: 7vw;
+  object-position: center;
+  object-fit: cover;
+  height: 10vh;
+  cursor: pointer;
+}
+/* Main right */
+.main-right {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  font-family: "DM Serif Display", serif;
+  margin-bottom: 2vh;
+  font-size: 2.5rem;
+}
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+h4.by {
+  color: var(--text-black-light);
+}
+p {
+  margin: 4vh 0;
+  line-height: 1.6rem;
+  font-size: 0.9rem;
+}
+.stars {
+  margin-bottom: 10px;
+}
+.fa-star,
+.five-dot-zero {
+  color: var(--text-green);
+}
+.rating {
+  font-size: 0.8rem;
+  color: var(--text-black-light);
+  font-weight: 400;
+}
+a {
+  display: inline-block;
+  margin: 10px 0 3vh;
+  font-size: inherit;
+  border-bottom: 1px solid var(--text-black);
+}
+.price {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 3vh;
+}
+.dispatch {
+  color: var(--text-black-light);
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1vw;
+  font-weight: 500;
+}
+.cta-cart,
+.cta-wishlist {
+  padding: 2.2vh 2vw;
+  border: 2px solid var(--text-black);
+  font: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.cta-cart {
+  background-color: var(--text-black);
+  color: #fff;
+}
+@media (hover: hover) {
+  .cta-cart:hover {
+    box-shadow: 5px 5px 0 grey;
+  }
+  .cta-wishlist:hover {
+    background-color: var(--text-black);
+    color: #fff;
+    box-shadow: 5px 5px 0 grey;
+  }
+}
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 4vh 0;
+  font-size: 0.85rem;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-container > div {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+footer i {
+  font-size: 1.2rem;
+  margin-right: 1vw;
+}
+footer h4 {
+  margin-bottom: 1vh;
+  font-size: 0.91rem;
+}
+footer p {
+  margin: 0;
+  line-height: 1.2rem;
+  color: var(--text-black-light);
+}
+/* Media queries */
+@media only screen and (max-width: 770px) {
+  .carousel,
+  .carousel .swiper-slide img,
+  .thumbnails {
+    width: 45vw;
+  }
+  main h1 {
+    font-size: 1.8rem;
+  }
+  main h4 {
+    font-size: 0.9rem;
+  }
+  main p {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  .price {
+    font-size: 1.6rem;
+  }
+  .dispatch {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .cta-buttons button {
+    font-size: 0.8rem;
+  }
+  footer h4 {
+    font-size: 0.9rem;
+  }
+  footer i {
+    font-size: 1rem;
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main {
+    height: unset;
+    margin-bottom: 3vh;
+  }
+  .main-container {
+    flex-direction: column;
+  }
+  .carousel,
+  .carousel .swiper-slide img,
+  .thumbnails {
+    width: 90vw;
+  }
+  .thumbnail img {
+    width: 15vw;
+  }
+  .cta-buttons button {
+    padding: 2vh 4vw;
+  }
+  .footer-container > div {
+    width: unset;
+  }
+  footer i {
+    font-size: 1.4rem;
+    margin-right: 4vw;
+  }
+  .fast {
+    margin: 3vh 0;
+  }
+}
